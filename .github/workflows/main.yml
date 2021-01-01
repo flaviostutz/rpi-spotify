@@ -3,9 +3,14 @@ name: buildx
 on:
   pull_request:
     branches: master
+    paths-ignore:
+      - '**.md'
   push:
     branches: master
-    tags:
+    paths-ignore:
+      - '**.md'
+  schedule:
+    - cron: "0 4 */8 * *" # almost weekly
 
 jobs:
   buildx:
